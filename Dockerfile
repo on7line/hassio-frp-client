@@ -10,12 +10,10 @@ ENV LANG C.UTF-8
 WORKDIR /usr/src
 
 # Copy data for add-on
-COPY data/configure.sh /
 COPY data/run.sh /
+COPY data/frpc /usr/src/
 
 RUN chmod a+x /run.sh
-RUN chmod a+x /configure.sh
-RUN /configure.sh $BUILD_ARCH $FRP_VERSION
-RUN rm -rf /configure.sh
+RUN chmod a+x /usr/src/frpc
 
 CMD [ "/run.sh" ]

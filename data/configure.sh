@@ -9,7 +9,7 @@ function select_machine() {
     local machine;
     case $build_arch in
         "aarch64")
-            machine="arm64"
+            machine="arm"
         ;;
         "amd64")
             machine="amd64"
